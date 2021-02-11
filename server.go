@@ -27,7 +27,7 @@ type Member struct{
 
 // func main responsavel pela chamada do programa
 func main() {
-	// Api via http como fazer pesquisas com linha de comando ?
+	// Api via get http como fazer pesquisas com linha de comando ?
 	response, err := http.Get("https://opencollective.com/seanlarkin.json")
 
 	templates = template.Must(template.ParseGlob("*.html"))	
