@@ -17,7 +17,7 @@ var templates *template.Template
 type Member struct{
 	Slug string `json: slug`
 	Currency string	`json: currency`
-	Imagem string `json: image`
+	Image string `json: image`
 	Balance uint `json: balance`
 	YearlyIncome uint `json: yearlyIncome`
 	BackersCount uint `json: backersCount`
@@ -49,7 +49,7 @@ func main() {
 
 		// aparição no console de fácil leitura
 		fmt.Println()
-		fmt.Printf("Nome: %s\nMoeda da doação: %s\n", user.Slug, user.Currency)
+		fmt.Printf("Nome: %s\nMoeda da doação: %s\nImagem: %s\n", user.Slug, user.Currency, user.Image)
 		fmt.Println()
 		
 			
