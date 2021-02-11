@@ -7,24 +7,24 @@ localhost:3000
 <img src="image/pagina_renderizada.png" alt="exemplo imagem">
 <br>
 
-> Projeto constituiu em contruir uma api em GO que consulta uma api externa e traz o resultado com uma leitura facilitada para humanos.
+> Projeto constituiu em contruir uma api em GO que consulta uma api externa e traz o resultado com uma leitura facilitada para humanos e rodar ela em um container no Docker.
 <br>
 
-> Antes vimos como ele esta sendo disposto em uma pagina web, agora veremos como esta no terminal do proprio vscode.
+> Antes vimos como ele esta sendo disposto em uma pagina web, agora veremos como esta no terminal do proprio vscode, pré-compilamento.
 
 ```go
 go run server.go
 ```
 
 <img src="image/comand-vscode.png" alt="exemplo imagem">
-
-## 💻 Pré-requisitos
-
+<br>
+<br>
+## 💻 Pré-Requisitos
+<br>
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+
+* Você instalou a versão mais recente de `<Go>`
+* Você tem uma máquina `<Linux>`. 
 
 ## 🚀 Instalando <nome_do_projeto>
 
