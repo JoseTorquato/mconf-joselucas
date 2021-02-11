@@ -112,7 +112,6 @@ Agora só executar o arquivo server com o comando.
 ```
 chmod +x ./server 
 ```
-<img src="image/docker_1.png" alt="exemplo imagem">
 
 Abra agora uma pagina web e digite.
 ```
