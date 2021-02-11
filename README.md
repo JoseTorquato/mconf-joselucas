@@ -19,6 +19,7 @@ go run server.go
 <img src="image/comand-vscode.png" alt="exemplo imagem">
 <br>
 <br>
+
 ## 💻 Pré-Requisitos
 <br>
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
@@ -35,9 +36,24 @@ Para instalar a <api>, siga estas etapas:
 
 Linux:
 ```
-$ git clone https://github.com/JoseTorquato/mfconf-api_go.git
+$ git clone https://github.com/JoseTorquato/mconf-joselucas.git
 ```
 <br>
+
+```linux
+cd mconf-joselucas/
+```
+
+```linux
+cd runner
+```
+
+```linux
+python3 runner.py
+```
+
+
+
 <br>
 
 ## Docker
