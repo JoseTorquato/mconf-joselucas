@@ -10,11 +10,11 @@ import (
 
 	"github.com/urfave/negroni"
    )
-
+// Criação da var templates e apontando para o ponteiro
 var templates *template.Template
 
- 
-type member struct{
+// Member struct que retorna json 
+type Member struct{
 	Slug string `json: slug`
 	Currency string	`json: currency`
 	Imagem string `json: image`
@@ -25,32 +25,36 @@ type member struct{
 }
 
 
-
+// func main responsavel pela chamada do programa
 func main() {
+	// Api via http como fazer pesquisas com linha de comando ?
 	response, err := http.Get("https://opencollective.com/seanlarkin.json")
 
-	templates = template.Must(template.ParseGlob("*.html"))
-
+	templates = template.Must(template.ParseGlob("*.html"))	
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+
 		if err != nil {
 			log.Fatal(err)
 		} else {
 			api, _ := ioutil.ReadAll(response.Body)
+			// Imprimi no console o resultado da api trazido
 			fmt.Println(string(api))
 		
-			user := member{}
+		// criando um user com o type struct para armazenar os dados vindo em fitas de bytes 
+		user := Member{}
+		if erro := json.Unmarshal([]byte(api), &user); erro != nil {
+			log.Fatal(erro)
+		}
+
+		// aparição no console de fácil leitura
+		fmt.Println()
+		fmt.Printf("Nome: %s\nMoeda da doação: %s\n", user.Slug, user.Currency)
+		fmt.Println()
 		
-			if erro := json.Unmarshal([]byte(api), &user); erro != nil {
-				log.Fatal(erro)
-			}
-			fmt.Println()
-			fmt.Printf("Nome: %s\nMoeda da doação: %s\n", user.Slug, user.Currency)
-			fmt.Println()
 			
-		
-			
-			templates.ExecuteTemplate(w, "api.html", user)
+		// executando o template e renderizando no api.html	
+		templates.ExecuteTemplate(w, "api.html", user)
 	}
 	})
 	
@@ -58,9 +62,4 @@ func main() {
 	n.UseHandler(mux)
   
 	http.ListenAndServe(":3000", n)
-}
-
-func api()  {
-	
-	
 }
